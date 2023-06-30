@@ -1,20 +1,31 @@
+// src/componentes/paginacao/paginacao.componente.jsx
+import { useDispatch, useSelector } from 'react-redux';
+import { setPage } from '../../redux/personagensSlice'; // Certifique-se de que esta é a importação correta para setPage
 import "./paginacao.css";
 
-/**
- * Componente que contém os botões para paginar
- *
- * Você deve adicionar as propriedades necessárias para que funcione corretamente
- *
- *
- * @returns Elemento JSX
- */
-const Paginacao = () => {
+const Paginacao = ({ ultimaPagina }) => {
+  const dispatch = useDispatch();
+  const paginaAtual = useSelector(state => state.personagens.paginaAtual);
+
+
+  const paginaAnterior = () => {
+    if (paginaAtual > 1) {
+      dispatch(setPage(paginaAtual - 1));
+    }
+  }
+
+  const proximaPagina = () => {
+    if (paginaAtual < ultimaPagina) {
+      dispatch(setPage(paginaAtual + 1));
+    }
+  }
+
   return (
     <div className="paginacao">
-      <button disabled={true} className={"primary"}>
+      <button onClick={paginaAnterior} disabled={paginaAtual === 1} className={"primary"}>
         Anterior
       </button>
-      <button disabled={false} className={"primary"}>
+      <button onClick={proximaPagina} disabled={paginaAtual === ultimaPagina} className={"primary"}>
         Próximo
       </button>
     </div>
