@@ -1,20 +1,13 @@
+// src/componentes/episodios/card-episodio.componente.jsx
 import "./card-episodio.css";
 
-/**
- * Card para cada episódio na visualização do personagem.
- *
- * Você precisará adicionar as propriedades necessárias para exibir os dados dos episódios
- *
- *
- * @returns Elemento JSX
- */
-const CardEpisodio = () => {
+const CardEpisodio = ({ episodio }) => {
   return (
     <div className="card-episodio">
-      <h4>Close Rick-counters of the Rick Kind</h4>
+      <h4>{episodio.nome}</h4>
       <div>
-        <span>S01E01</span>
-        <span>Lançado em: April 7, 2014</span>
+        <span>{episodio.codigo}</span>
+        <span>Lançado em: {episodio.dataLancamento}</span>
       </div>
     </div>
   );

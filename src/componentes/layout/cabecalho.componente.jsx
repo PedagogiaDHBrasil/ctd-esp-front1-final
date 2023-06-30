@@ -1,13 +1,7 @@
+// src/componentes/layout/cabecalho.componente.jsx
 import { Link } from "react-router-dom";
 import "./cabecalho.css";
 
-/**
- * Cabeçalho que contém os links para navegar entre as páginas
- *
- * Uso: `<Cabecalho />`
- *
- * @returns {JSX.Element}
- */
 const Cabecalho = () => {
   return (
     <header>

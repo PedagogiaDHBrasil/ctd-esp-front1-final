@@ -1,17 +1,40 @@
 .filtros {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 20px;
 }
+
 .filtros label {
   margin-bottom: 10px;
   font-size: 16px;
   font-weight: 500;
 }
 
-.filtros input[type="text"]{
+.filtro-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.filtro-container input {
   flex-grow: 1;
-  padding: 15px 20px; 
+  padding: 15px 20px;
   border-radius: 3px;
   border: 1px solid #d0d0d0;
+  margin-left: 10px;
+}
+
+.filtro-container button {
+
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.filtro-container button:hover {
+  background-color: #c82333;
 }
